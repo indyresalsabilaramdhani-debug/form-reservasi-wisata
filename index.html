@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Reservasi Web Wisata Kalian</title>
+</head>
+<body>
+
+<h2>Form Reservasi Paket Wisata Kustom</h2>
+
+<form action="proses.php" method="post" enctype="multipart/form-data">
+
+  <!-- Identitas Tersembunyi -->
+  <input type="hidden" name="id_partner" value="PARTNER-WWK-001">
+
+  <!-- Data Keamanan -->
+  <label>PIN Akses Tiket Digital (6 Digit):</label><br>
+  <input type="password" name="pin" minlength="6" maxlength="6" required>
+  <br><br>
+
+  <!-- Lokasi Penjemputan -->
+  <label>Lokasi Penjemputan:</label><br>
+  <select name="lokasi_jemput" required>
+    <option value="">-- Pilih Lokasi --</option>
+    <option value="Jawa Barat - Bandung - Stasiun Bandung">
+      Jawa Barat - Bandung - Stasiun Bandung
+    </option>
+    <option value="DKI Jakarta - Jakarta - Bandara Soekarno Hatta">
+      DKI Jakarta - Jakarta - Bandara Soekarno Hatta
+    </option>
+    <option value="Bali - Denpasar - Bandara Ngurah Rai">
+      Bali - Denpasar - Bandara Ngurah Rai
+    </option>
+  </select>
+  <br><br>
+
+  <!-- Detail Keberangkatan -->
+  <fieldset>
+    <legend>Detail Keberangkatan</legend>
+
+    <label>Pencarian Paket Wisata:</label><br>
+    <input type="search" name="paket_wisata" placeholder="Contoh: Borobudur" required>
+    <br><br>
+
+    <label>Tanggal Keberangkatan:</label><br>
+    <input type="date" name="tanggal_berangkat" required>
+    <br><br>
+
+    <label>Jam Kumpul:</label><br>
+    <input type="time" name="jam_kumpul" required>
+    <br><br>
+
+    <label>Jumlah Peserta (Pax):</label><br>
+    <input type="number" name="jumlah_peserta" min="1" max="20" required>
+  </fieldset>
+  <br>
+
+  <!-- Preferensi Personal -->
+  <fieldset>
+    <legend>Preferensi Personal</legend>
+
+    <label>Link Media Sosial:</label><br>
+    <input type="url" name="media_sosial" placeholder="https://instagram.com/username">
+    <br><br>
+
+    <label>Warna Seragam Grup:</label><br>
+    <input type="color" name="warna_seragam">
+  </fieldset>
+  <br>
+
+  <!-- Opsi Tambahan -->
+  <fieldset>
+    <legend>Opsi Tambahan</legend>
+
+    <label>Metode Pembayaran:</label><br>
+    <input type="radio" name="pembayaran" value="full" required> Full Payment<br>
+    <input type="radio" name="pembayaran" value="dp"> DP 50%
+    <br><br>
+
+    <label>Fasilitas Ekstra:</label><br>
+    <input type="checkbox" name="fasilitas[]" value="asuransi"> Asuransi Perjalanan<br>
+    <input type="checkbox" name="fasilitas[]" value="kamera"> Penyewaan Kamera<br>
+    <input type="checkbox" name="fasilitas[]" value="makan_malam"> Paket Makan Malam Romantis
+    <br><br>
+
+    <label>Upload KTP / Paspor:</label><br>
+    <input type="file" name="dokumen_identitas" accept=".jpg,.png,.pdf" required>
+  </fieldset>
+  <br>
+
+  <button type="submit">Kirim Reservasi</button>
+
+</form>
+
+</body>
+</html>
